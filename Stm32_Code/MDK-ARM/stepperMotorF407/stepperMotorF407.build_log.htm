@@ -1,0 +1,131 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.24.2.0
+Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: cxn cxn, cxn, LIC=GE7Z9-44SPE-ZC9JY-ITWVL-IVFYB-JW1ES
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.24.1
+Toolchain Path:  D:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 5 (build 528)
+Assembler:       Armasm.exe V5.06 update 5 (build 528)
+Linker/Locator:  ArmLink.exe V5.06 update 5 (build 528)
+Library Manager: ArmAr.exe V5.06 update 5 (build 528)
+Hex Converter:   FromElf.exe V5.06 update 5 (build 528)
+CPU DLL:         SARMCM3.DLL V5.24.1
+Dialog DLL:      DCM.DLL V1.16.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.26.0
+Dialog DLL:      TCM.DLL V1.32.0.0
+ 
+<h2>Project:</h2>
+E:\graduateWork\Stepper motor\stepperMotorF407\MDK-ARM\stepperMotorF407.uvprojx
+Project File Date:  04/07/2018
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'stepperMotorF407'
+compiling bluetooth_comm_task.c...
+..\App\bluetooth_comm_task.h(6): warning:  #1295-D: Deprecated declaration RecivePath_Analysis - give arg types
+  void RecivePath_Analysis();
+..\Bsp\bsp_uart.h(6): warning:  #1295-D: Deprecated declaration bluetooth_init - give arg types
+  void bluetooth_init();
+..\App\temp_ctrl_task.h(5): warning:  #1295-D: Deprecated declaration Get_NTC_Temp - give arg types
+  void Get_NTC_Temp();
+..\App\bluetooth_comm_task.c(27): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "uint8_t *"
+  			HAL_UART_Transmit_DMA(&
+LUETOOTH_HUART, tempStr, 8);
+..\App\bluetooth_comm_task.c(59): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+  	if (strncmp("path", buff, 4) == 0) {
+..\App\bluetooth_comm_task.c(68): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+  		if (strncmp("end", buff + len - 3, 3) == 0) {
+..\App\bluetooth_comm_task.c(74): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+  		else if (strncmp("lp", buff + len - 2, 2) == 0) {
+..\App\bluetooth_comm_task.c(75): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+  			if (strncmp("ep", buff + len - 6, 2) == 0) {
+..\App\bluetooth_comm_task.c(79): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+  			else if (strncmp("ep", buff + len - 5, 2) == 0) {
+..\App\bluetooth_comm_task.c(89): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+  	else if (strncmp("tp", buff, 2) == 0 && sRecivePath.isEnd == 0 && sRecivePath.isStart == 1) {
+..\App\bluetooth_comm_task.c(90): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+  		if (strncmp("end", buff + len - 3, 3) == 0) {
+..\App\bluetooth_comm_task.c(98): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+  		else if (strncmp("ep", buff + len - 2, 2) == 0) {
+..\App\bluetooth_comm_task.c(150): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+  									        || (strncmp(sRecivePath.path + i + j + m, "end", 3) == 0)) {
+..\App\bluetooth_comm_task.c(203): warning:  #1-D: last line of file ends without a newline
+  }
+..\App\bluetooth_comm_task.c: 14 warnings, 0 errors
+compiling draw_diabetes_task.c...
+..\App\draw_diabetes_task.h(8): warning:  #1295-D: Deprecated declaration Analysis_End - give arg types
+  void Analysis_End();
+..\App\draw_diabetes_task.h(9): warning:  #1295-D: Deprecated declaration Is_Analysis_End - give arg types
+  uint8_t Is_Analysis_End();
+..\App\draw_diabetes_task.h(15): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Bsp\stepper_con.h(54): warning:  #1295-D: Deprecated declaration Print_All_Init - give arg types
+  void Print_All_Init();
+..\Bsp\stepper_con.h(55): warning:  #1295-D: Deprecated declaration Stepper_Init - give arg types
+  void Stepper_Init();
+..\Bsp\stepper_con.h(56): warning:  #1295-D: Deprecated declaration Zero_All_Init - give arg types
+  void Zero_All_Init();
+..\Bsp\stepper_con.h(58): warning:  #1295-D: Deprecated declaration Stepper_Stop - give arg types
+  void Stepper_Stop();
+..\Bsp\stepper_con.h(65): warning:  #1295-D: Deprecated declaration Is_All_Init - give arg types
+  uint8_t Is_All_Init();
+..\App\bluetooth_comm_task.h(6): warning:  #1295-D: Deprecated declaration RecivePath_Analysis - give arg types
+  void RecivePath_Analysis();
+..\App\draw_diabetes_task.c(175): warning:  #167-D: argument of type "int16_t (*)[4]" is incompatible with parameter of type "const int16_t (*)[4]"
+  						Analysis_Diabete_Code(sDiyDiabeteStr.diyDiabete, sDiyDiabeteStr.totalLine);
+..\App\draw_diabetes_task.c(335): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+  	if (strncmp("stop", buff, 4) == 0) {
+..\App\draw_diabetes_task.c(340): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+  	if (strncmp("path", buff, 4) == 0 || strncmp("tp", buff, 2) == 0) {
+..\App\draw_diabetes_task.c(340): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "const char *"
+  	if (strncmp("path", buff, 4) == 0 || strncmp("tp", buff, 2) == 0) {
+..\App\draw_diabetes_task.c(378): warning:  #1-D: last line of file ends without a newline
+  // }
+..\App\draw_diabetes_task.c: 14 warnings, 0 errors
+compiling stepper_con.c...
+..\Bsp\stepper_con.h(54): warning:  #1295-D: Deprecated declaration Print_All_Init - give arg types
+  void Print_All_Init();
+..\Bsp\stepper_con.h(55): warning:  #1295-D: Deprecated declaration Stepper_Init - give arg types
+  void Stepper_Init();
+..\Bsp\stepper_con.h(56): warning:  #1295-D: Deprecated declaration Zero_All_Init - give arg types
+  void Zero_All_Init();
+..\Bsp\stepper_con.h(58): warning:  #1295-D: Deprecated declaration Stepper_Stop - give arg types
+  void Stepper_Stop();
+..\Bsp\stepper_con.h(65): warning:  #1295-D: Deprecated declaration Is_All_Init - give arg types
+  uint8_t Is_All_Init();
+..\Bsp\stepper_con.c: 5 warnings, 0 errors
+linking...
+Program Size: Code=28550 RO-data=1110 RW-data=188 ZI-data=18948  
+"stepperMotorF407\stepperMotorF407.axf" - 0 Error(s), 33 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.0.1.pack
+                ARM.CMSIS.5.0.1
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.0.1
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.9.0.pack
+                Keil.STM32F4xx_DFP.2.9.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_stepperMotorF407
+  D:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include
+  D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.0.1
+Build Time Elapsed:  00:00:12
+</pre>
+</body>
+</html>

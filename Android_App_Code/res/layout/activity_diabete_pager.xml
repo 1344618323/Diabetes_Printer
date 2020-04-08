@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/diabete_pager_temp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|left"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft= "16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/no_see_temp" />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/diabete_pager_temp"
+            android:id="@+id/diabete_pager_seek_bar"
+            android:max="200"/>
+
+        <android.support.v4.view.ViewPager
+            android:layout_below="@id/diabete_pager_seek_bar"
+            android:id="@+id/diabete_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/first_pager_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_margin="16dp"
+        android:text="FIRST" />
+
+    <Button
+        android:id="@+id/last_pager_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:text="LAST" />
+
+</FrameLayout>

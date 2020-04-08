@@ -1,0 +1,13 @@
+steppermotorf407\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/list.c
+steppermotorf407\list.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+steppermotorf407\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+steppermotorf407\list.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+steppermotorf407\list.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+steppermotorf407\list.o: ../Inc/FreeRTOSConfig.h
+steppermotorf407\list.o: ../Inc/main.h
+steppermotorf407\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+steppermotorf407\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+steppermotorf407\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+steppermotorf407\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+steppermotorf407\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+steppermotorf407\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h

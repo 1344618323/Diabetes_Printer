@@ -1,0 +1,97 @@
+#include "draw_diabetes_task.h"
+#include "cmsis_os.h"
+#include "sys.h"
+#include "stepper_con.h"
+/**
+*  该任务用于绘制糖人
+*/
+
+Mechine sMechine;
+typedef enum {ePre = 0, ePreDone = 1,} eMotorPreSta;
+typedef enum {eWait = 0, eWork = 1,} eMotorWorkSta;
+
+void Draw_Diabetes_Task(void const * argument)
+{
+	Print_All_Init();
+
+	//限位开关供电
+	HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0, GPIO_PIN_SET);
+
+	osDelay(500);
+	while (1)
+	{
+		if (sMechine.isPre == ePre) {
+			// 归零操作
+			Zero_All_Init();
+			if (HAL_GPIO_ReadPin(YTOU_GPIO, YTOU_PIN) == GPIO_PIN_SET
+			        && HAL_GPIO_ReadPin(XTOU_GPIO, XTOU_PIN) == GPIO_PIN_SET
+			   ) {
+				sMechine.isPre = ePreDone;
+			}
+		}
+		else if (sMechine.isPre == ePreDone) {
+			if (sMechine.isWork == eWait) {
+				//停止操作
+				//Stepper_Stop();
+				static int a = 1;
+				if (a == 1) {
+					if (!My_PBP_Circle(1, -50, 0, 50, 0, 50, 1)) {
+						a = 2;
+					}
+				}
+				else if (a == 2) {
+					if (!My_PBP_Line(1, -10, 30)) {
+						sMechine.isWork = eWork;
+					}
+				}
+			}
+			else if (sMechine.isWork == eWork) {
+				//画糖
+				Stepper_Stop();
+			}
+		}
+		osDelay(5);
+	}
+}
+
+#define LINE 0<<8
+#define CIRCLE 1<<8
+#define DRAW 1
+#define NODRAW 0
+const int16_t pokemanLogo[][4] =
+{
+	{LINE | NODRAW, 60, 120, 1},
+	{CIRCLE | DRAW, 60, 1, 1},
+	{ -60, 0, -60, 0},
+	{LINE | DRAW, 30, 0, 1},
+	{CIRCLE | DRAW, 30, 1, 1},
+	{ -30, 0, -30, 0},
+	{LINE | NODRAW, 60, 0, 1},
+	{LINE | DRAW, 30, 0, 1},
+	{LINE | NODRAW, -180, -120, 1}
+};
+
+typedef struct
+{
+	uint8_t isDraw;//NODRAW DRAW
+	uint8_t isLine;//LINE CIRCLE
+	uint8_t codeLine;//解析到第几行
+	uint8_t codeTotal;//共多少行
+	uint8_t preCount;//从不画到画要等一段时间
+	uint8_t sta;
+} AnalysisCode;
+
+enum {startAna = 0, workAna = 1, endAna = 2};
+
+AnalysisCode sAnalysisCode;
+
+void Analysis_Diabete_Code(int16_t diaArray[][4]) {
+	if (sAnalysisCode.sta == startAna) {
+		sAnalysisCode.codeTotal = sizeof(diaArray[0]) / sizeof(diaArray[0][0]);
+		sAnalysisCode.sta = workAna;
+	}
+	if (sAnalysisCode.sta == workAna) {
+		sAnalysisCode.isLine=diaArray[codeLine]
+	}
+}

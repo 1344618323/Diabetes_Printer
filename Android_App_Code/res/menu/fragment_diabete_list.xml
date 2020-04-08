@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/stop_making_diabete"
+        android:icon="@drawable/ic_action_stop"
+        android:title="@string/stop_making_label"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/connect_bluetooth_device"
+        android:icon="@drawable/ic_start_leak"
+        android:title="@string/connect_device_label"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/diy_diabete_tool"
+        android:icon="@drawable/ic_diy_diabete"
+        android:title="DIY"
+        app:showAsAction="ifRoom|withText"/>
+    <item
+        android:title="@string/show_subtitle"
+        android:id="@+id/show_subtitile"
+        app:showAsAction="ifRoom" />
+</menu>
