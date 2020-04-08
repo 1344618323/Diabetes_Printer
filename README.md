@@ -13,22 +13,22 @@
 
 4. `Android_App_Code` 是App的实现代码，`Stm32_Code` 是打印机控制主板的程序
 
-<img src="img/SolidWork设计图.png" style="zoom:80%;display: inline-block; float:middle"/>
+<img src="SolidWork设计图.png" style="zoom:80%;display: inline-block; float:middle"/>
 <center>SolidWork 设计图</center>
 
 ----
 
-<img src="img/硬件间连接.png" style="zoom:80%;display: inline-block; float:middle"/>
+<img src="硬件间连接.png" style="zoom:80%;display: inline-block; float:middle"/>
 <center>硬件间连接</center>
 
 ---
 
-<img src="img/糖人打印机 APP.png" style="zoom:80%;display: inline-block; float:middle"/>
+<img src="糖人打印机 APP.png" style="zoom:80%;display: inline-block; float:middle"/>
 <center>糖人打印机 APP</center>
 
 ---
 
-<img src="img/成品展示.png" style="zoom:80%;display: inline-block; float:middle"/>
+<img src="成品展示.png" style="zoom:80%;display: inline-block; float:middle"/>
 <center>成品展示</center>
 
 ---
@@ -43,7 +43,7 @@ App基于 Model-View-Controller (MVC) 架构模式进行设计。
 Diabete 实例代表一种糖人造型，保存了打印机中内置糖人造型的名字、id、是否正在制作等信息。其中用户 DIY 的糖人造型也是一个 
 Diabete 实例，这些实例全部用一个列表 DiabeteLab 联系起来。
 
-<img src="img/App设计.png" style="zoom:80%;display: inline-block; float:middle"/>
+<img src="App设计.png" style="zoom:80%;display: inline-block; float:middle"/>
 <center>App设计</center>
 
 ---
@@ -69,6 +69,6 @@ CMSIS-RTOS version: 1.02
 3. 步进电机驱动 ：stepper_con.c/h，同时这个文件中还实现了基于 逐点比较法 的双电机联动
 
 ---
-<img src="img/实物.png" style="zoom:80%;display: inline-block; float:middle"/>
+<img src="实物.png" style="zoom:80%;display: inline-block; float:middle"/>
 <center>实物</center>
 
